@@ -1,5 +1,9 @@
 package br.unitins.trabalho.classes;
+
 import java.util.Scanner;
+
+
+
 public class Carro {
 
     public String nome;
@@ -7,6 +11,8 @@ public class Carro {
     public String modelo;
     public String peso;
     public String cilindrada;
+
+    public float velocidade = 0;
 
 
     public Carro lerCarro()
@@ -20,14 +26,12 @@ public class Carro {
         carro.modelo = scan.next();
         System.out.println("Informe a cor do carro: ");
         carro.cor = scan.next();
-        System.out.println("Informe o peso do carro (KG): ");
+        System.out.println("Informe o peso do carro: ");
         carro.peso = scan.next();
         System.out.println("Informe a cilindrada: ");
         carro.cilindrada = scan.next();
 
-
         return carro;
-
 
     }
         public void imprimir(Carro[] vetCarro){
@@ -35,10 +39,11 @@ public class Carro {
                 System.out.println(carro.nome);
                 System.out.println(carro.cor);
                 System.out.println(carro.modelo);
-                System.out.println(carro.peso);
-                System.out.println(carro.cilindrada);
                 System.out.println();
             }
         }
 
 }
+
+
+
