@@ -2,8 +2,6 @@ package br.unitins.trabalho.classes;
 
 import java.util.Scanner;
 
-
-
 public class Carro {
 
     public String nome;
@@ -11,7 +9,6 @@ public class Carro {
     public String modelo;
     public String peso;
     public String cilindrada;
-
     public float velocidade = 0;
 
 
@@ -41,6 +38,18 @@ public class Carro {
                 System.out.println(carro.modelo);
                 System.out.println();
             }
+        }
+
+        public Carro lerAcelerar()
+        {
+            Carro carro = new Carro();
+            carro.velocidade += 5;
+            carro.velocidade += (carro.velocidade * 0.15) - (carro.peso/300);
+        }
+
+        public Carro lerFrear()
+        {
+            carro.velocidade -= carro.velocidade * 0.25;
         }
 
 }
