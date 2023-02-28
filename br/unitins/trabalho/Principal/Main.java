@@ -14,34 +14,51 @@ public class Main {
 
         int escolhaC = 0;
         int escolhaM = 0;
-        Carro[] vetorCarro = new Carro[2];
+
+        System.out.print("Informe o número de competidores do Carro: ");
+        escolhaC = scan.nextInt();
+        System.out.print("Informe o número de competidores da Moto: ");
+        escolhaM = scan.nextInt();
+
+        Carro[] vetCarro = new Carro[escolhaC];
         Carro carro = new Carro();
-        Moto[] vetorMoto = new Moto[2];
+        Moto[] vetMoto = new Moto[escolhaM];
         Moto moto = new Moto();
 
-        //Dados do Carro
-        for (int i = 0; i < vetorCarro.length; i++) {
-            vetorCarro[i] = carro.lerCarro();
+
+        for (int i = 0; i < vetCarro.length; i++) {
+            vetCarro[i] = carro.lerCarro();
         }
 
-        carro.imprimir(vetorCarro);
+        carro.imprimir(vetCarro);
 
-        //Inicio Corrida
+
         for (int segundo = 1; segundo <= 20; segundo++) {
-            System.out.print("Segundo" + segundo + ":");
-            for() {
-                    lerAceleracao
-            }
-                if (segundo == 6 || segundo == 11 || segundo == 15) {
-                    for()
-                        lerFrear
-                }
-            }
-            /*for (int i = 0; i < vetorMoto.length; i++) {
-            vetorMoto[i] = moto.lerMoto();
-        }*/
-            //moto.imprimir(vetorMoto);
+            System.out.println("Segundo" + segundo + ":");
 
-
+            if (segundo == 6 || segundo == 11 || segundo == 15) {
+                carro.Frear(vetCarro);
+            } else {
+                carro.Acelerar(vetCarro);
+            }
         }
+
+
+        for (int i = 0; i < vetMoto.length; i++) {
+            vetMoto[i] = moto.lerMoto();
+        }
+
+        moto.imprimir(vetMoto);
+
+        for (int segundo = 1; segundo <= 20; segundo++) {
+            System.out.println("Segundo" + segundo + ":");
+
+            if (segundo == 6 || segundo == 11 || segundo == 15) {
+                moto.Frear(vetMoto);
+            } else {
+                moto.Acelerar(vetMoto);
+            }
+        }
+
     }
+}
